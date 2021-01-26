@@ -17,12 +17,11 @@ buildPythonPackage rec {
     owner = "MilaNLProc";
     repo = "contextualized-topic-models";
     rev = "v${version}";
-    sha256 = "sha256-t6dmh6/cbZorn52sneYV48e4rdgdKabfLDjfQEBFMGY=";
+    sha256 = "sha256-t6dmh6/cbZorn52sneYV48e4rdgdKaBfLDjfQEBFMGY=";
   };
 
   postPatch = ''
-    sed -i -e 's!==!>=!' requirements.txt
-    sed -i -e 's!tqdm==.*!tqdm!' requirements.txt
+    sed -i -e 's!==.*!!' requirements.txt
   '';
 
   propagatedBuildInputs = [ 
